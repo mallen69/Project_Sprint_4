@@ -1,0 +1,46 @@
+#Create a new data.set named "SD_Aug_2016" which can then be used to output all of the Standard Deviation Scores
+SD_Analysis_Aug_2016 <- rbind(Aug_2016$Lecture,data.frame(Lecture, Responsive, Student_Guide, Lab_Exercises,Classroom,Computer,Network,See_Hear,Had_Knowledge_Skills, Learned_What_I_Needed, Technical_Details))
+
+
+#I believe this sets all my columns to numeric with the sapply function
+numdata<-Aug_2016[sapply(Aug_2016, is.numeric)]
+
+#combine my two data.sets of numdata and SD_Analysis_Aug_2016 in order to show my total Standard Deviation Score at the bottom of each column.
+SD_MPLS_Aug_2016 <- rbind(numdata, SD_Analysis_Aug_2016)
+View(SD_MPLS_Aug_2016)
+
+
+#Write the cleaned and total Calculated SD_MPLS (Standard Deviation Mean Perceived Learning Score) Data from R back to a CSV File (SD_MPLS_August_2016)
+write.csv(SD_MPLS_Aug_2016, "SD_MPLS_August_2016.csv")
+
+
+
+
+#The below line was after "#Creating variable name "MPLS_Technical_Details"  (Mean Perceived Learning Score)"
+#Create a new data.set named "Analysis_Aug_2016" which can then be used to output all of the MPLS Scores...!! :)
+Analysis_Aug_2016 <- rbind(Aug_2016$Lecture,data.frame(Lecture, Responsive, Student_Guide, 
+Lab_Exercises,Classroom,Computer,Network,See_Hear,Had_Knowledge_Skills, Learned_What_I_Needed, Technical_Details))
+
+
+
+Uh oh...  R program goes into a loop I guess and hoses up with the merge_recurse command
+
+SD_Analysis_Aug_2016 <- rbind(Aug_2016$Lecture,data.frame(SD_Lecture, SD_Responsive, SD_Student_Guide, SD_Lab_Exercises,SD_Classroom,Computer,SD_Network,SD_See_Hear,SD_Had_Knowledge_Skills, SD_Learned_What_I_Needed, SD_Technical_Details))
+> View(SD_Analysis_Aug_2016)
+> #Create a new data.set named "SD_Aug_2016" which can then be used to output all of the Standard Deviation Scores
+> Mean_Analysis_Aug_2016 <- rbind(Aug_2016$Lecture,data.frame(Lecture, Responsive, Student_Guide, Lab_Exercises,Classroom,Computer,Network,See_Hear,Had_Knowledge_Skills, Learned_What_I_Needed, Technical_Details))
+> 
+> View(Mean_Analysis_Aug_2016)
+> data <- merge_recurse(df_list)
+Error in merge_recurse(df_list) : could not find function "merge_recurse"
+> Total_MPLS_Mean_SD_Aug_2016 <- merge_recurse(MPLS_Scores,Mean_Analysis_Aug_2016,SD_Analysis_Aug_2016)
+Error in merge_recurse(MPLS_Scores, Mean_Analysis_Aug_2016, SD_Analysis_Aug_2016) : 
+  could not find function "merge_recurse"
+> library(reshape)
+Warning message:
+package ‘reshape’ was built under R version 3.4.3 
+> Total_MPLS_Mean_SD_Aug_2016 <- merge_recurse(MPLS_Scores,Mean_Analysis_Aug_2016,SD_Analysis_Aug_2016)
+View(Total_MPLS_Mean_SD_Aug_2016)
+
+
+ Total_MPLS_Mean_SD_Aug_2016 <- rbind(MPLS_Scores, Mean_Analysis_Aug_2016, SD_Analysis_Aug_2016)
