@@ -667,6 +667,10 @@ barplot(height=Column_SD, names.arg=labels, beside = TRUE, col="darkgreen", bord
 barplot(height=Column_mean, names.arg=labels, beside = TRUE, col="red", border = "green", 
         main="MPLS_Scores", ylab="Mean", las=2, ylim = c(0, 46))
 
+
+
+
+
 Combined_PDF = "C:/Users/micha/Desktop/DevLeague Begins Nov 7 2017/Project_Sprint_4/Combined_PDF.pdf"
 
 pdf(file = Combined_PDF)
@@ -678,6 +682,12 @@ labels_SD <- list('Lecture', 'Responsive', 'Guide', 'Labs', 'Classroom', 'Comput
 
 
 #Putting this code in to be able to save the barplot and possibly other things
+Revised_barplot_Mean <- barplot(height=Column_mean, names.arg=labels, beside = TRUE, col="red", 
+                                border = "green", main="MPLS_Scores", ylab="Mean", las=2, ylim = c(0, 46))
+
+text(Revised_barplot_Mean, Column_mean, labels = Mean_Values,pos=3, offset=.5)
+
+#Putting this code in to be able to save the barplot and possibly other things
 Revised_Barplot_SD <- barplot(height=Column_SD, names.arg=labels_SD, beside = TRUE, col="darkgreen", border = "red", main="Standard_Deviation", ylab="STD", las=2 ,ylim = c(0, 7))
 
 #This sets the row heights for the barplot from 0 to 6
@@ -687,15 +697,6 @@ Revised_Barplot_SD <- barplot(height=Column_SD, names.arg=labels_SD, beside = TR
 
 text(Revised_Barplot_SD, Column_SD, labels = Standard_Dev_Values, pos=3, offset = .5)
 
-
-
-
-
-#Putting this code in to be able to save the barplot and possibly other things
-Revised_barplot_Mean <- barplot(height=Column_mean, names.arg=labels, beside = TRUE, col="red", 
-                                border = "green", main="MPLS_Scores", ylab="Mean", las=2, ylim = c(0, 46))
-
-text(Revised_barplot_Mean, Column_mean, labels = Mean_Values,pos=3, offset=.5)
 
 dev.off()
 
