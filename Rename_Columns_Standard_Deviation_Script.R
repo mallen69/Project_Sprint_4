@@ -16,6 +16,9 @@ getwd()
 #loading the library dplyr in order for the 
 library(dplyr)
 
+#loading the libary ggplot2
+library(ggplot2)
+
 #creating the variable "Aug_2016" to represent the "Real_CSV_EOC_Survey.CSV" which is my 
 #existing Excel Dirty Data
 Aug_2016 <- read.csv("Real_CSV_EOC_Survey.csv")
