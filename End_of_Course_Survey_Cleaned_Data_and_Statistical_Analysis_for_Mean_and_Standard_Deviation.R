@@ -676,24 +676,27 @@ Combined_PDF = "C:/Users/micha/Desktop/DevLeague Begins Nov 7 2017/Project_Sprin
 pdf(file = Combined_PDF)
 
 #Creating the labels which will be at the bottom of the Standard Deviation and MPLS_Scores for the bar graphs
-labels <- list('Lecture', 'Responsive', 'Guide', 'Labs', 'Classroom', 'Computer', 'Network', 'See_Hear', 'Had_Skills', 'Learned', 'Details')
+labels <- list('Lecture', 'Responsive', 'Guide', 'Labs', 'Classroom', 
+               'Computer', 'Network', 'See_Hear', 'Had_Skills', 'Learned', 'Details')
 
-labels_SD <- list('Lecture', 'Responsive', 'Guide', 'Labs', 'Classroom', 'Computer', 'Network', 'See_Hear', 'Had_Skills', 'Learned', 'Details')
+labels_SD <- list('Lecture', 'Responsive', 'Guide', 'Labs', 'Classroom', 'Computer', 'Network',
+              'See_Hear', 'Had_Skills', 'Learned', 'Details')
 
 
 #Putting this code in to be able to save the barplot and possibly other things
-Revised_barplot_Mean <- barplot(height=Column_mean, names.arg=labels, beside = TRUE, col="red", 
-                                border = "green", main="MPLS_Scores", ylab="Mean", las=2, ylim = c(0, 46))
+Revised_barplot_Mean <- barplot(height=Column_mean, names.arg=labels, beside = TRUE, col="orange", 
+    border = "red", main="MPLS_Scores", ylab="Mean", las=2, ylim = c(0, 46))
 
 text(Revised_barplot_Mean, Column_mean, labels = Mean_Values,pos=3, offset=.5)
 
 #Putting this code in to be able to save the barplot and possibly other things
-Revised_Barplot_SD <- barplot(height=Column_SD, names.arg=labels_SD, beside = TRUE, col="darkgreen", border = "red", main="Standard_Deviation", ylab="STD", las=2 ,ylim = c(0, 7))
-
 #This sets the row heights for the barplot from 0 to 6
 #ylim = c(0, 6)
 #This labels the barplot with Standard_Deviation as the title & STD on the Y Axis 
 #las=2 This makes the labels of the bar graph go vertical 
+
+Revised_Barplot_SD <- barplot(height=Column_SD, names.arg=labels_SD, beside = TRUE, col="turquoise", 
+    border = "red", main="Standard_Deviation", ylab="STD", las=2 ,ylim = c(0, 7))
 
 text(Revised_Barplot_SD, Column_SD, labels = Standard_Dev_Values, pos=3, offset = .5)
 
