@@ -16,7 +16,7 @@ getwd()
 
 #creating the variable "Aug_2016" to represent the "Real_CSV_EOC_Survey.CSV" which is my 
 #existing Excel Dirty Data
-Aug_2016 <- read.csv("Real_CSV_EOC_Survey.csv")
+Aug_2016 <- read.csv("us_contagious_diseases")
 
 
 #To remove the first column name try this
